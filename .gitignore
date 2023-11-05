@@ -1,0 +1,16 @@
+/docs/*
+result
+result-*
+/result/*
+dist-newstyle/*
+*/dist-newstyle/*
+*.hoo
+*.warn
+.direnv/*
+*.o
+*.hi
+*.dyn_o
+*.dyn_hi
+cabal.project.local
+cabal.project.local~
+

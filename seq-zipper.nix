@@ -12,6 +12,7 @@ mkDerivation {
     deepseq foldable1-classes-compat monoid-subclasses newtype-generics
     nonempty-containers
   ];
+  homepage = "https://github.com/emeinhardt/seq-zipper";
   description = "A non-empty comonadic Seq zipper";
   license = lib.licenses.mit;
 }
