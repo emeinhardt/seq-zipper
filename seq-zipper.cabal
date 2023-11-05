@@ -1,0 +1,42 @@
+cabal-version:      3.0
+name:               seq-zipper
+version:            0.1.0.0
+synopsis:           A non-empty comonadic Seq zipper
+license:            MIT
+license-file:       LICENSE
+author:             Eric Meinhardt
+maintainer:         ericmeinhardt@gmail.com
+copyright:          2023
+category:           Data
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+    ghc-options:  -Wall -Wdefault -Wno-orphans -Wredundant-constraints -Wincomplete-uni-patterns -Wincomplete-record-updates -Wcompat
+
+library
+    import:             warnings
+    hs-source-dirs:     src
+    default-language:   GHC2021
+    default-extensions:
+      UnicodeSyntax
+    other-extensions:
+      NoImplicitPrelude
+      DerivingVia
+      DeriveAnyClass
+      TypeFamilies
+    exposed-modules:
+      Data.Sequence.NonEmpty.Zipper
+    build-depends:
+        base ^>=4.17.1.0
+      , deepseq                     ==1.4.*
+      -- , pretty-simple               ==4.1.*
+      , base-unicode-symbols        ==0.2.*
+      , composition-prelude         ==3.0.*
+      , newtype-generics            ==0.6.*
+      , foldable1-classes-compat    ==0.1.*
+      , containers                  ==0.6.*
+      , nonempty-containers         ==0.3.*
+      , comonad                     ==5.0.*
+      , monoid-subclasses           ==1.2.*
+      -- , optics-core                 ==0.4.*

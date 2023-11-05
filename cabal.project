@@ -1,0 +1,9 @@
+packages:
+  ./*.cabal
+
+package *
+  haddock-html: true
+  haddock-hyperlink-source: true
+  haddock-quickjump: true
+  haddock-internal: true
+  haddock-options: --built-in-themes --use-unicode
