@@ -36,11 +36,11 @@ library
     build-depends:
         base                        >=4.16 && < 5.0
       , deepseq                     >=1.4  && < 1.5
-      , base-unicode-symbols        >=0.2
+      , base-unicode-symbols        >=0.2  && < 1.0
       , composition-prelude         >=3.0  && < 4.0
       , newtype-generics            >=0.6  && < 0.7
-      , foldable1-classes-compat    >=0.1  && < 1.0
-      , containers                  >=0.6  && < 0.7
-      , nonempty-containers         >=0.3  && < 4.0
+      , semigroupoids               ==5.3.7
+      , containers                  >=0.6  && < 0.8
+      , nonempty-containers         >=0.3  && < 0.4
       , comonad                     >=5.0  && < 6.0
       , monoid-subclasses           >=1.2  && < 1.3

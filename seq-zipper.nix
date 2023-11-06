@@ -1,7 +1,6 @@
 { mkDerivation, base, base-unicode-symbols, comonad
-, composition-prelude, containers, deepseq
-, foldable1-classes-compat, lib, monoid-subclasses
-, newtype-generics, nonempty-containers
+, composition-prelude, containers, deepseq, lib, monoid-subclasses
+, newtype-generics, nonempty-containers, semigroupoids
 }:
 mkDerivation {
   pname = "seq-zipper";
@@ -9,8 +8,8 @@ mkDerivation {
   src = ./.;
   libraryHaskellDepends = [
     base base-unicode-symbols comonad composition-prelude containers
-    deepseq foldable1-classes-compat monoid-subclasses newtype-generics
-    nonempty-containers
+    deepseq monoid-subclasses newtype-generics nonempty-containers
+    semigroupoids
   ];
   homepage = "https://github.com/emeinhardt/seq-zipper";
   description = "A non-empty comonadic Seq zipper";
