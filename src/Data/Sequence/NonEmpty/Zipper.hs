@@ -94,7 +94,7 @@ module Data.Sequence.NonEmpty.Zipper
   , fromListL
   , fromListR
   , toNESeq
-  , toNonEmpty
+  , Data.Sequence.NonEmpty.Zipper.toNonEmpty
   , Data.Sequence.NonEmpty.Zipper.toSeq
   , Data.Sequence.NonEmpty.Zipper.toList
 
@@ -214,8 +214,10 @@ import Data.Maybe
   )
 
 import Data.Foldable          qualified as F
-import Data.Foldable1
+import Data.Semigroup.Foldable
   ( Foldable1 ( foldMap1
+              , fold1
+              , toNonEmpty
               )
   )
 import Data.List              qualified as L
@@ -853,20 +855,15 @@ instance Foldable Zipper where
 instance Traversable Zipper where
   traverse f (Zipper p x s) = Zipper <$> traverse f p <*> f x <*> traverse f s
 
-{- | The package defining nonempty sequences doesn't look like it's been updated at all since 2021 and
-this library is a package with fairly niche expected appeal, so I see little risk in defining an orphan
-instance here. If/when it is updated, this can be wrapped in a newtype. Pull requests for making this
-safer are also welcome. -}
-instance Foldable1 NESeq where
-  foldMap1 f (x :<|| xs) = go (f x) xs where
-    go y Empty      = y
-    go y (z :<| zs) = y <> go (f z) zs
-
 instance Foldable1 Zipper where
   foldMap1 f (Zipper Empty      x Empty     ) = f x
   foldMap1 f (Zipper Empty      x (s :<| ss)) = f x <> foldMap1 f (s :<|| ss)
   foldMap1 f (Zipper (p :<| ps) x Empty     ) = foldMap1 f (p :<|| ps) <> f x
   foldMap1 f (Zipper (p :<| ps) x (s :<| ss)) = foldMap1 f (p :<|| ps) <> f x <> foldMap1 f (s :<|| ss)
+
+  toNonEmpty = Data.Sequence.NonEmpty.Zipper.toNonEmpty
+
+  fold1 = foldMap1 id
 
 -- TODO more Semigroupoid instances / other things downstream of Foldable1 should be added as needed...
 

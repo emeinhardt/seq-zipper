@@ -33,7 +33,6 @@ tested-with:
   GHC ==9.6.2
    || ==9.6.1
    || ==9.4.5
-   || ==9.2.8
 
 source-repository head
   type:     git
@@ -61,7 +60,7 @@ library
       , base-unicode-symbols        >=0.2  && < 1.0
       , composition-prelude         >=3.0  && < 4.0
       , newtype-generics            >=0.6  && < 0.7
-      , foldable1-classes-compat    >=0.1  && < 1.0
+      , semigroupoids               ==5.3.7
       , containers                  >=0.6  && < 0.8
       , nonempty-containers         >=0.3  && < 0.4
       , comonad                     >=5.0  && < 6.0
