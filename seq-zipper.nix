@@ -13,6 +13,6 @@ mkDerivation {
     nonempty-containers
   ];
   homepage = "https://github.com/emeinhardt/seq-zipper";
-  description = "A non-empty comonadic Seq zipper";
+  description = "A non-empty comonadic zipper backed by Data.Sequence.";
   license = lib.licenses.mit;
 }
