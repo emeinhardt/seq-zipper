@@ -1,7 +1,23 @@
 cabal-version:          3.0
 name:                   seq-zipper
 version:                0.1.0.0
-synopsis:               A non-empty comonadic Seq zipper.
+synopsis:               A non-empty comonadic zipper backed by Data.Sequence.
+description:
+  This package defines a comonadic zipper for non-empty (finite) sequences, backed by [Data.Sequence](https://hackage.haskell.org/package/containers-0.7/docs/Data-Sequence.html) from the @containers@ package.
+
+  Where a more familiar cons-list-backed non-empty comonadic list zipper principally allows for
+
+  - Comonadic function application and composition.
+  - Efficient linear traversal.
+  - Efficient modification at or next to the focus value.
+
+  ...a @Seq@-backed zipper /also/ allows for
+
+  - Efficient access to the outside edges of sequence.
+  - Efficient random access to arbitrary locations in the prefix or suffix of the zipper.
+  - Efficient movement of the cursor (focus) to arbitrary indices.
+
+  See the top-level documentation of @Data.Sequence.NonEmpty.Zipper@ for more information.
 license:                MIT
 license-file:           LICENSE
 author:                 Eric Meinhardt
@@ -42,11 +58,11 @@ library
     build-depends:
         base                        >=4.16 && < 5.0
       , deepseq                     >=1.4  && < 1.5
-      , base-unicode-symbols        >=0.2
+      , base-unicode-symbols        >=0.2  && < 1.0
       , composition-prelude         >=3.0  && < 4.0
       , newtype-generics            >=0.6  && < 0.7
       , foldable1-classes-compat    >=0.1  && < 1.0
-      , containers                  >=0.6  && < 0.7
-      , nonempty-containers         >=0.3  && < 4.0
+      , containers                  >=0.6  && < 0.8
+      , nonempty-containers         >=0.3  && < 0.4
       , comonad                     >=5.0  && < 6.0
       , monoid-subclasses           >=1.2  && < 1.3

@@ -18,4 +18,4 @@ Where a more familiar cons-list-backed non-empty comonadic list zipper principal
  - Efficient random access to arbitrary locations in the prefix or suffix of the zipper.
  - Efficient movement of the cursor (focus) to arbitrary indices.
 
-See the top-level documentation of `Data.Sequence.NonEmpty/Zipper` for more information.
+See the top-level documentation of `Data.Sequence.NonEmpty.Zipper` for more information.
