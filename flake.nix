@@ -13,7 +13,13 @@
 
         # Change 945 appropriately to select a different GHC version
         # Check `nix-env -f "<nixpkgs>" -qaP -A haskell.compiler` to see available versions.
-        haskellPackages = pkgs.haskell.packages.ghc945;
+        compiler = "ghc945";
+
+        # haskellPackages = pkgs.haskell.packages."${compiler}";
+        haskellPackages = pkgs.haskell.packages."${compiler}".override {
+          overrides = haskellPackagesNew: haskellPackagesOld: rec {
+          };
+        };
 
         jailbreakUnbreak = pkg:
           pkgs.haskell.lib.doJailbreak (pkg.overrideAttrs (_: { meta = { }; }));

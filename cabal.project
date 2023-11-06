@@ -7,3 +7,5 @@ package *
   haddock-quickjump: true
   haddock-internal: true
   haddock-options: --built-in-themes --use-unicode
+
+allow-newer: semigroupoids:base
