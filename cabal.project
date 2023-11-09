@@ -1,6 +1,13 @@
 packages:
   ./*.cabal
 
+source-repository-package
+  type: git
+  location: https://github.com/emeinhardt/nonempty-containers.git
+  tag: e5954c913c7294e078de38332d9ed75172bd68b4
+  subdir: nonempty-containers-alt
+  --sha256: 1s626cgz0vlf1bxkl3lm0dfq7xdz41fg8n07gsj97yl2pfqkyb2d
+
 package *
   haddock-html: true
   haddock-hyperlink-source: true

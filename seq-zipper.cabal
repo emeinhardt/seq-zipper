@@ -41,6 +41,7 @@ library
       , newtype-generics            >=0.6  && < 0.7
       , semigroupoids               ==5.3.7
       , containers                  >=0.6  && < 0.8
-      , nonempty-containers         >=0.3  && < 0.4
+      , nonempty-containers-alt     >=0.3  && < 0.4
+      -- , nonempty-containers         >=0.3  && < 0.4
       , comonad                     >=5.0  && < 6.0
       , monoid-subclasses           >=1.2  && < 1.3
